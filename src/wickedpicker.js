@@ -455,7 +455,7 @@
          * @param {object} The input element
          */
         setText: function (input) {
-            $(input).val(this.formatTime(this.selectedHour, this.selectedMin, this.selectedMeridiem, this.selectedSec));
+            $(input).val(this.formatTime(this.selectedHour, this.selectedMin, this.selectedMeridiem, this.selectedSec)).trigger('change');
         },
 
         /*
