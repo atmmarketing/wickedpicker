@@ -187,16 +187,11 @@
                 self.showPicker($(this));
             });
             //Handle click events for closing Wickedpicker
-            $(document).off('click').on('click', function (event) {
-                //Clicking the X
-                if ($(event.target).is(self.close)) {
-                    self.hideTimepicker(element);
-                } else if ($(event.target).closest(self.timepicker).length || $(event.target).closest($('.hasWickedpicker')).length) { //Clicking the  Wickedpicker or one of it's inputs
-                    event.stopPropagation();
-                } else {   //Everything else
-                    self.hideTimepicker(element);
-                }
-            });
+
+				$(self.close).on('click', function (event) {
+					self.hideTimepicker(element);
+				});
+	 
             $(element).on('focus', function () {
                 $('.wickedpicker__controls__control--hours').focus();
             });
